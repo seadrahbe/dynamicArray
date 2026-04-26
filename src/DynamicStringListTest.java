@@ -1,9 +1,13 @@
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.*;
 
 
-public class DyanmicStringListTest {
+public class DynamicStringListTest {
 
     @Test
     public void testGet() {
@@ -27,6 +31,23 @@ public class DyanmicStringListTest {
         //assert
         assertEquals(1, list.size());
     }
+
+    public void testRemove() {
+        
+        //arrange
+        DynamicStringList list = new DynamicStringList();
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
+
+        //act
+        list.remove(1);
+
+        //assert
+        assertEquals("hello", list.get(1));
+        assertEquals("hi", list.get(0));
+    }
+
 
     
 
