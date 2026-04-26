@@ -49,7 +49,9 @@ public class DynamicStringList implements StringList {
   @Override
   public String remove(int index) {
 
-    try {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds for length " + size);
+    }
 
     String removedString = data[index];
 
@@ -58,9 +60,6 @@ public class DynamicStringList implements StringList {
     }
 
     size--;
-  } catch(Exception e) {
-    
-  }
 
     return removedString;
   }
