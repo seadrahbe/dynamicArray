@@ -23,6 +23,20 @@ public class DynamicStringListTest {
 
     }
     @Test
+    public void testSet() {
+        //arrange
+        DynamicStringList list = new DynamicStringList();
+        //act
+        list.add("hello1");
+        list.add("hello2");
+        list.add("hello3");
+        list.add("hello4");
+        list.set(0, "first");
+        //assert
+        assertEquals("first", list.get(0));
+    }
+    
+    @Test
     public void testAdd() {
         //arrange
         DynamicStringList list = new DynamicStringList();
