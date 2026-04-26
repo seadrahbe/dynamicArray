@@ -58,7 +58,7 @@ public class DynamicStringListTest {
         list.add("hello");
 
         DynamicStringList list2 = new DynamicStringList();
-        list.add("hi");
+        list2.add("hi");
 
         DynamicStringList list3 = new DynamicStringList();
 
@@ -78,18 +78,18 @@ public class DynamicStringListTest {
         list.add("hello");
 
         DynamicStringList list2 = new DynamicStringList();
-        list.add("hi");
-        list.add("hey");
-        list.add("hello");
-        list.add("hi");
-        list.add("hey");
-        list.add("hello");
-        list.add("hi");
-        list.add("hey");
-        list.add("hello");
-        list.add("hi");
-        list.add("hey");
-        list.add("hello");
+        list2.add("hi");
+        list2.add("hey");
+        list2.add("hello");
+        list2.add("hi");
+        list2.add("hey");
+        list2.add("hello");
+        list2.add("hi");
+        list2.add("hey");
+        list2.add("hello");
+        list2.add("hi");
+        list2.add("hey");
+        list2.add("hello");
 
         assertEquals(10, list.capacity());
         assertEquals(20, list2.capacity());
