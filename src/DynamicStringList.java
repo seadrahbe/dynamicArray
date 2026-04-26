@@ -49,7 +49,20 @@ public class DynamicStringList implements StringList {
   @Override
   public String remove(int index) {
 
-    return "";
+    try {
+
+    String removedString = data[index];
+
+    for (int i = index; i < size; i++) {
+      data[i] = data[i + 1];
+    }
+
+    size--;
+  } catch(Exception e) {
+    
+  }
+
+    return removedString;
   }
 
   /**
@@ -60,7 +73,7 @@ public class DynamicStringList implements StringList {
   @Override
   public int size() {
 
-    return 0;
+    return size;
   }
 
   /**
@@ -71,7 +84,7 @@ public class DynamicStringList implements StringList {
   @Override
   public int capacity() {
 
-    return 0;
+    return data.length;
   }
 }
 
