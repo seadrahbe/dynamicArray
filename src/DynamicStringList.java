@@ -1,7 +1,7 @@
 
 public class DynamicStringList implements StringList {
     private String[] data = new String[10];
-    private int size;
+    private int size = 0;
     
 
     @Override

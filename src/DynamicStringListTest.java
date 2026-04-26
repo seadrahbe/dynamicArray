@@ -32,6 +32,7 @@ public class DynamicStringListTest {
         assertEquals(1, list.size());
     }
 
+    @Test
     public void testRemove() {
         
         //arrange
@@ -48,8 +49,51 @@ public class DynamicStringListTest {
         assertEquals("hi", list.get(0));
     }
 
+    @Test
+    public void testSize() {
+        // arrange + act
+        DynamicStringList list = new DynamicStringList();
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
 
-    
+        DynamicStringList list2 = new DynamicStringList();
+        list.add("hi");
 
+        DynamicStringList list3 = new DynamicStringList();
+
+
+        // assert
+        assertEquals(3, list.size());
+        assertEquals(1, list2.size());
+        assertEquals(0, list3.size());
+    }
+
+    @Test
+    public void testCapacity() {
+
+        DynamicStringList list = new DynamicStringList();
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
+
+        DynamicStringList list2 = new DynamicStringList();
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
+        list.add("hi");
+        list.add("hey");
+        list.add("hello");
+
+        assertEquals(10, list.capacity());
+        assertEquals(20, list2.capacity());
+
+    }
     
 }
