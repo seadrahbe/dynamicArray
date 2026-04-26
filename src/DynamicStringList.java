@@ -29,15 +29,24 @@ public class DynamicStringList implements StringList {
 
   }
 
-  /**
-   * Adds a new string to the end of the list.
-   *
-   * @param value the string to add to the list.
-   */
-  @Override
-  public void add(String value) {
+  
+//Adds a new string to the end of the list.*
+//@param value the string to add to the list.*/
+   @Override
+   public void add(String value) {
+    if (size == data.length){
+      String[] newData = new String[data.length * 2];
+      for (int i = 0; i < data.length; i++) {
+          newData[i] = data[i];}
+
+        data = newData;
+
+    }
+    data[size] = value;
+    size++;
 
   }
+  
 
   /**
    * Removes the string at the specified index from the list.
