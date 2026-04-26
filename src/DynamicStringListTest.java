@@ -47,6 +47,9 @@ public class DynamicStringListTest {
         //assert
         assertEquals("hello", list.get(1));
         assertEquals("hi", list.get(0));
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.get(3);
+        });
     }
 
     @Test
